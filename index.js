@@ -12,7 +12,9 @@ program.command('parse')
   .description('Parse a string into cangjie keyboard input letters')
   .argument('<string>', 'string to parse')
   .action((s) => {
-    new PepperSpray(s);
+    const p = new PepperSpray(s);
+
+    console.log(p.result);
   });
 
 

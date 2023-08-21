@@ -49,7 +49,25 @@ class PepperSpray {
       }
     });
 
-    console.log(n);
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'function':
+          result.wide = cangjie['people'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['water'];
+          break;
+
+        case 'place':
+          result.wide = cangjie['middle'];
+          break;
+
+        case 'time':
+          result.wide = cangjie['heart'];
+          break;
+      }
+    }
 
     this.result.push(result);
   }

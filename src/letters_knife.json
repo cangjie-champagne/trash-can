@@ -3,7 +3,7 @@
     "type": "vowel",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["d", "f", "g", "h", "k", "l", "m", "n", "p", "r", "s", "t", "w"]
     }
   },
   "b": {
@@ -38,27 +38,27 @@
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["r", "y"]
     }
   },
   "g": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "r", "y"]
     }
   },
   "h": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["y"]
     }
   },
   "i": {
     "type": "vowel",
     "waits_for": {
-      "vowels": ["a", "e", "i", "o", "u"],
+      "vowels": ["a", "o"],
       "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
     }
   },
@@ -66,119 +66,119 @@
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": []
     }
   },
   "k": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "r", "y"]
     }
   },
   "l": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["l", "y"]
     }
   },
   "m": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["y"]
     }
   },
   "n": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["y"]
     }
   },
   "o": {
     "type": "vowel",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "n", "r", "s", "x", "y"]
     }
   },
   "p": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "r", "y"]
     }
   },
   "q": {
     "type": "consonant",
     "waits_for": {
-      "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "vowels": ["u"],
+      "consonants": ["w"]
     }
   },
   "r": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "y"]
     }
   },
   "s": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "s", "w", "y"]
     }
   },
   "t": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "r", "w", "y"]
     }
   },
   "u": {
     "type": "vowel",
     "waits_for": {
-      "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "vowels": [],
+      "consonants": ["d", "g", "m", "n", "p", "r"]
     }
   },
   "v": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["y"]
     }
   },
   "w": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "y"]
     }
   },
   "x": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["y"]
     }
   },
   "y": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": []
     }
   },
   "z": {
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+      "consonants": ["h", "w"]
     }
   }
 }

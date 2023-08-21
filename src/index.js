@@ -1,4 +1,5 @@
 const letters = require('./letters.json');
+const letters_knife = require('./letters_knife.json');
 const cangjie = require('./cangjie.json');
 
 class PepperSpray {
@@ -8,6 +9,14 @@ class PepperSpray {
 
     this.parse();
     this.translate();
+  }
+
+  getType(letter) {
+    if (letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u') {
+      return 'vowels';
+    }
+
+    return 'consonants';
   }
 
   parse() {
@@ -31,21 +40,38 @@ class PepperSpray {
       web: []
     };
     
-    w.forEach((w) => {
+    w.forEach((l) => {
       result.web.push({
-        l: w,
-        v: letters[w]
+        l,
+        v: letters[l]
       });
     });
 
     // Get result for wide
-    let n = ['value'];
+    let syllable = false;
+    let syllable_letter = null;
+    let n = [];
 
-    result.web.forEach((_l, i) => {
-      if (_l.v !== 'value' && _l.v !== n[n.length - 1]) {
+    result.web.forEach((_l, i) => { // a | f | t | e | r
+      let type_group = this.getType(_l.l);
+
+      if (!syllable) { // A T R
+        syllable = true;
+        syllable_letter = (syllable_letter) ? syllable_letter : _l.l;
+
         n.push(_l.v);
+      } else {
+        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
+          syllable_letter = _l.l;
+
+          n.push(_l.v);
+        } else {
+          syllable_letter = _l.l;
+        }
       }
     });
+
+    console.log(n);
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -59,10 +85,6 @@ class PepperSpray {
 
         case 'place':
           result.wide = cangjie['middle'];
-          break;
-
-        case 'time':
-          result.wide = cangjie['heart'];
           break;
       }
     }

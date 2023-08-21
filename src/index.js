@@ -27,7 +27,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['mountain'],
+      wide: cangjie['corpse'],
       web: []
     };
     
@@ -74,7 +74,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['water'],
+      wide: cangjie['corpse'],
       web: []
     };
     

@@ -52,10 +52,10 @@ class PepperSpray {
     let syllable_letter = null;
     let n = [];
 
-    result.web.forEach((_l, i) => { // a | f | t | e | r
+    result.web.forEach((_l, i) => {
       let type_group = this.getType(_l.l);
 
-      if (!syllable) { // A T R
+      if (!syllable) {
         syllable = true;
         syllable_letter = (syllable_letter) ? syllable_letter : _l.l;
 

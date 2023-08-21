@@ -1,6 +1,6 @@
 const { Command } = require('commander');
 const { name, version } = require('./package.json');
-const PepperSpray = require('./src/index');
+const { PepperSpray } = require('./src/index');
 const program = new Command();
 
 program
@@ -12,9 +12,7 @@ program.command('parse')
   .description('Parse a string into cangjie keyboard input letters')
   .argument('<string>', 'string to parse')
   .action((s) => {
-    const result = new PepperSpray('banana by the beach');
-
-    console.log(result);
+    new PepperSpray(s);
   });
 
 

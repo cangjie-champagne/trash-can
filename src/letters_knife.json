@@ -142,7 +142,7 @@
       "vowels": ["a", "e", "i", "o", "u"],
       "consonants": ["y"],
       "_after": {
-
+        "n": ["er"]
       }
     }
   },

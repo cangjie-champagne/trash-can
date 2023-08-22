@@ -447,7 +447,7 @@ class PepperSpray {
           break;
 
         case 'result':
-          result.wide = cangjie['value'];
+          result.wide = cangjie['bamboo'];
           break;
       }
     }
@@ -456,67 +456,643 @@ class PepperSpray {
   }
 
   k(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['fire'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['wood'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['gold'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['earth'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['moon'];
+          break;
+      }
+    }
+
+    this.result.push(result);
   }
 
   l(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result);
   }
 
   m(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   n(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   o(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   p(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   q(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   r(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   s(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   t(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   u(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   v(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   w(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   x(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   y(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 
   z(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['value'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['value'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['value'];
+          break;
+      }
+    }
+
+    this.result.push(result); 
   }
 }
 

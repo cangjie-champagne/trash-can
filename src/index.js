@@ -499,7 +499,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['value'],
+      wide: cangjie['field'],
       web: []
     };
     
@@ -515,19 +515,19 @@ class PepperSpray {
     if (n.length >= 2) {
       switch(n[1]) {
         case 'value':
-          result.wide = cangjie['value'];
+          result.wide = cangjie['mountain'];
           break;
 
         case 'function':
-          result.wide = cangjie['value'];
+          result.wide = cangjie['dagger-axe'];
           break;
 
         case 'behavior':
-          result.wide = cangjie['value'];
+          result.wide = cangjie['earth'];
           break;
 
         case 'result':
-          result.wide = cangjie['value'];
+          result.wide = cangjie['people'];
           break;
       }
     }

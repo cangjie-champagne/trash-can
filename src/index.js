@@ -71,8 +71,6 @@ class PepperSpray {
       }
     });
 
-    console.log(n);
-
     if (n.length >= 2) {
       switch(n[1]) {
         case 'function':
@@ -96,24 +94,37 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['corpse'],
+      wide: cangjie['mountain'],
       web: []
     };
     
-    w.forEach((w) => {
+    w.forEach((l) => {
       result.web.push({
-        l: w,
-        v: letters[w]
+        l,
+        v: letters[l]
       });
     });
 
     // Get result for wide
-    let n = ['value'];
+    let syllable = false;
+    let syllable_letter = null;
+    let n = [];
 
     result.web.forEach((_l, i) => {
-      if (_l.v !== 'value' && _l.v !== 'place' ) {
-        if (_l.v !== n[n.length - 1]) {
+      let type_group = this.getType(_l.l);
+
+      if (!syllable) {
+        syllable = true;
+        syllable_letter = (syllable_letter) ? syllable_letter : _l.l;
+
+        n.push(_l.v);
+      } else {
+        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
+          syllable_letter = _l.l;
+
           n.push(_l.v);
+        } else {
+          syllable_letter = _l.l;
         }
       }
     });
@@ -121,19 +132,15 @@ class PepperSpray {
     if (n.length >= 2) {
       switch(n[1]) {
         case 'function':
-          result.wide = cangjie[''];
+          result.wide = cangjie['disaster'];
           break;
 
         case 'behavior':
-          result.wide = cangjie[''];
+          result.wide = cangjie['earth'];
           break;
 
         case 'place':
-          result.wide = cangjie[''];
-          break;
-
-        case 'time':
-          result.wide = cangjie[''];
+          result.wide = cangjie['corpse'];
           break;
       }
     }
@@ -142,435 +149,99 @@ class PepperSpray {
   }
 
   c(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   d(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   e(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   f(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   g(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   h(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   i(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   j(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   k(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   l(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   m(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   n(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   o(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   p(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   q(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   r(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   s(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   t(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   u(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   v(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   w(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   x(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   y(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 
   z(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['corpse'],
-      web: []
-    };
     
-    w.forEach((w) => {
-      result.web.push({
-        l: w,
-        v: letters[w]
-      });
-    });
-
-    this.result.push(result);
   }
 }
 

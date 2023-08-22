@@ -125,7 +125,7 @@
     "type": "consonant",
     "waits_for": {
       "vowels": ["a", "e", "i", "o", "u"],
-      "consonants": ["y"],
+      "consonants": ["s", "y"],
       "_after": {
 
       }

@@ -3,7 +3,8 @@ const letters_knife = require('./letters_knife.json');
 const cangjie = require('./cangjie.json');
 
 class PepperSpray {
-  constructor(string) {
+  constructor(string, d = false) {
+    this.debug = d;
     this.phrase = string || '';
     this.result = [];
 
@@ -101,6 +102,8 @@ class PepperSpray {
       }
     });
 
+    if (this.debug) console.log(n);
+
     if (n.length >= 2) {
       switch(n[1]) {
         case 'function':
@@ -188,6 +191,8 @@ class PepperSpray {
         }
       }
     });
+
+    if (this.debug) console.log(n);
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -277,6 +282,8 @@ class PepperSpray {
       }
     });
 
+    if (this.debug) console.log(n);
+
     if (n.length >= 2) {
       switch(n[1]) {
         case 'function':
@@ -365,7 +372,7 @@ class PepperSpray {
       }
     });
 
-    console.log(n);
+    if (this.debug) console.log(n);
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -455,7 +462,7 @@ class PepperSpray {
       }
     });
 
-    console.log(n);
+    if (this.debug) console.log(n);
 
     if (n.length >= 2) {
       switch(n[1]) {

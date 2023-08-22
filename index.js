@@ -11,8 +11,9 @@ program
 program.command('parse')
   .description('Parse a string into cangjie keyboard input letters')
   .argument('<string>', 'string to parse')
-  .action((s) => {
-    const p = new PepperSpray(s);
+  .option('-d, --debug', 'debug')
+  .action((s, { debug }) => {
+    const p = new PepperSpray(s, debug);
 
     console.log(p.result);
   });

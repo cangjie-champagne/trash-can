@@ -91,7 +91,7 @@ class PepperSpray {
           result.wide = cangjie['water'];
           break;
 
-        case 'place':
+        case 'result':
           result.wide = cangjie['middle'];
           break;
       }
@@ -160,7 +160,7 @@ class PepperSpray {
           result.wide = cangjie['earth'];
           break;
 
-        case 'place':
+        case 'result':
           result.wide = cangjie['corpse'];
           break;
       }
@@ -228,7 +228,7 @@ class PepperSpray {
           result.wide = cangjie['day'];
           break;
 
-        case 'place':
+        case 'result':
           result.wide = cangjie['corpse'];
           break;
       }
@@ -254,33 +254,31 @@ class PepperSpray {
 
     // Get result for wide
     let syllable = false;
-    let syllable_letter = null;
-    let syllable_count = 0;
-    let ignore = false;
+    let syllable_letters = [];
     let n = [];
 
     result.web.forEach((_l, i) => {
-      let type_group = this.getType(_l.l);
+      let letter_type_group = this.getType(_l.l);
 
-      if (!syllable) {
+      if (!syllable_letters.length) {
         syllable = true;
-        syllable_letter = _l.l;
-        syllable_count = 1;
+        syllable_letters.push(_l.l);
 
         n.push(_l.v);
       } else {
-        let a = (result.web[i - 2]) ? result.web[i - 2] : false;
-        let b = (a) ? letters_knife[a.l]['waits_for']["_after"][syllable_letter] : false;
-        let c = (a && b) ? b.includes(_l.l) : false;
+        let not_a_syllable_of = (letter) => { !letters_knife[letter]['waits_for'][letter_type_group].includes(_l.l) };
+        let not_a_syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] === undefined };
 
-        syllable_count++;
-
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
-          syllable_letter = _l.l;
+        if (syllable_letters.length === 1 && not_a_syllable_of(syllable_letters[0])) {
+          syllable_letters = [_l.l];
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && c) {
+        } else if (syllable_letters.length >= 3 && not_a_syllable_after_of(syllable_letters[1])) {
+          syllable_letters = [_l.l];
+
           n.push(_l.v);
+        } else {
+          syllable_letters.push(_l.l);
         }
       }
     });
@@ -294,11 +292,11 @@ class PepperSpray {
           break;
 
         case 'behavior':
-          result.wide = cangjie['day'];
+          result.wide = cangjie[''];
           break;
 
-        case 'place':
-          result.wide = cangjie['corpse'];
+        case 'result':
+          result.wide = cangjie['fire'];
           break;
       }
     }
@@ -396,4 +394,3 @@ class PepperSpray {
 }
 
 module.exports.PepperSpray = PepperSpray;
-

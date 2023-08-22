@@ -27,7 +27,8 @@
       "vowels": ["a", "e", "i", "o", "u"],
       "consonants": ["h", "l", "r", "s", "t", "y", "z"],
       "_after": {
-
+        "a": ["r"],
+        "h": ["ool"]
       }
     }
   },
@@ -45,7 +46,7 @@
     "type": "vowel",
     "waits_for": {
       "vowels": ["a", "i", "o", "u"],
-      "consonants": ["c", "d", "f", "g", "m", "n", "r", "s", "x", "y"],
+      "consonants": ["c", "d", "f", "g", "l", "m", "n", "r", "s", "x", "y"],
       "_after": {
         "d": ["g"],
         "g": ["o"],
@@ -109,7 +110,7 @@
       "vowels": ["a", "e", "i", "o", "u"],
       "consonants": ["h", "r", "y"],
       "_after": {
-
+        "u": ["ll"]
       }
     }
   },
@@ -119,7 +120,7 @@
       "vowels": ["a", "e", "i", "o", "u"],
       "consonants": ["l", "y"],
       "_after": {
-
+        "l": []
       }
     }
   },

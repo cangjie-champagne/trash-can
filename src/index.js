@@ -50,6 +50,8 @@ class PepperSpray {
     // Get result for wide
     let syllable = false;
     let syllable_letter = null;
+    let syllable_count = 0;
+    let ignore = false;
     let n = [];
 
     result.web.forEach((_l, i) => {
@@ -57,15 +59,27 @@ class PepperSpray {
 
       if (!syllable) {
         syllable = true;
-        syllable_letter = (syllable_letter) ? syllable_letter : _l.l;
+        syllable_letter = _l.l;
+        syllable_count = 1;
 
         n.push(_l.v);
       } else {
+        syllable_count++;
+
         if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
           syllable_letter = _l.l;
-
+          
           n.push(_l.v);
         } else {
+          let le = (!result.web[i + 1]) ? '' : result.web[i + 1].l;
+          let lk = letters_knife[_l.l]['waits_for']['_after'][le];
+
+          if (syllable_count = 2 && !lk) {
+            syllable = false;
+          } else if (lk && result.word.slice(i + 1, result.word.length) === (le + lk)) {
+            syllable_count = 3;
+          }
+
           syllable_letter = _l.l;
         }
       }
@@ -108,6 +122,8 @@ class PepperSpray {
     // Get result for wide
     let syllable = false;
     let syllable_letter = null;
+    let syllable_count = 0;
+    let ignore = false;
     let n = [];
 
     result.web.forEach((_l, i) => {
@@ -115,19 +131,32 @@ class PepperSpray {
 
       if (!syllable) {
         syllable = true;
-        syllable_letter = (syllable_letter) ? syllable_letter : _l.l;
+        syllable_letter = _l.l;
+        syllable_count = 1;
 
         n.push(_l.v);
       } else {
+        syllable_count++;
+
         if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
           syllable_letter = _l.l;
-
+          
           n.push(_l.v);
         } else {
+          let le = (!result.web[i + 1]) ? '' : result.web[i + 1].l;
+          let lk = letters_knife[_l.l]['waits_for']['_after'][le];
+
+          if (syllable_count = 2 && !lk) {
+            syllable = false;
+          } else if (lk && result.word.slice(i + 1, result.word.length) === (le + lk)) {
+            syllable_count = 3;
+          }
+
           syllable_letter = _l.l;
         }
       }
     });
+
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -149,7 +178,75 @@ class PepperSpray {
   }
 
   c(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['bow'],
+      web: []
+    };
     
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    // Get result for wide
+    let syllable = false;
+    let syllable_letter = null;
+    let syllable_count = 0;
+    let ignore = false;
+    let n = [];
+
+    result.web.forEach((_l, i) => {
+      let type_group = this.getType(_l.l);
+
+      if (!syllable) {
+        syllable = true;
+        syllable_letter = _l.l;
+        syllable_count = 1;
+
+        n.push(_l.v);
+      } else {
+        syllable_count++;
+
+        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
+          syllable_letter = _l.l;
+          
+          n.push(_l.v);
+        } else {
+          let le = (!result.web[i + 1]) ? '' : result.web[i + 1].l;
+          let lk = letters_knife[_l.l]['waits_for']['_after'][le];
+
+          if (syllable_count = 2 && !lk) {
+            syllable = false;
+          } else if (lk && result.word.slice(i + 1, result.word.length) === (le + lk)) {
+            syllable_count = 3;
+          }
+
+          syllable_letter = _l.l;
+        }
+      }
+    });
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'function':
+          result.wide = cangjie['water'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['day'];
+          break;
+
+        case 'place':
+          result.wide = cangjie['corpse'];
+          break;
+      }
+    }
+
+    this.result.push(result);
   }
 
   d(word, w) {

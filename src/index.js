@@ -69,17 +69,17 @@ class PepperSpray {
         let c = (a && b) ? b.includes(_l.l) : false;
 
         syllable_count++;
-        
 
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l) && !c) {
+        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
           syllable_letter = _l.l;
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && !c) {
+        } else if (this.getType(_l.l) === 'consonants' && c) {
           n.push(_l.v);
         }
       }
     });
+
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -137,17 +137,17 @@ class PepperSpray {
         let c = (a && b) ? b.includes(_l.l) : false;
 
         syllable_count++;
-        
 
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l) && !c) {
+        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
           syllable_letter = _l.l;
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && !c) {
+        } else if (this.getType(_l.l) === 'consonants' && c) {
           n.push(_l.v);
         }
       }
     });
+
 
 
     if (n.length >= 2) {
@@ -206,19 +206,17 @@ class PepperSpray {
         let c = (a && b) ? b.includes(_l.l) : false;
 
         syllable_count++;
-        
 
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l) && !c) {
+        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
           syllable_letter = _l.l;
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && !c) {
+        } else if (this.getType(_l.l) === 'consonants' && c) {
           n.push(_l.v);
         }
       }
     });
 
-    console.log(n)
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -243,7 +241,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['people'],
+      wide: cangjie['wood'],
       web: []
     };
     
@@ -276,22 +274,23 @@ class PepperSpray {
         let c = (a && b) ? b.includes(_l.l) : false;
 
         syllable_count++;
-        
 
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l) && !c) {
+        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
           syllable_letter = _l.l;
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && !c) {
+        } else if (this.getType(_l.l) === 'consonants' && c) {
           n.push(_l.v);
         }
       }
     });
 
+    console.log(n);
+
     if (n.length >= 2) {
       switch(n[1]) {
         case 'function':
-          result.wide = cangjie['water'];
+          result.wide = cangjie['people'];
           break;
 
         case 'behavior':

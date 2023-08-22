@@ -213,7 +213,8 @@
       "vowels": [],
       "consonants": ["d", "g", "m", "n", "p", "r"],
       "_after": {
-
+        "e": ["ue"],
+        "i": ["t"]
       }
     }
   },

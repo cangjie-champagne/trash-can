@@ -79,7 +79,14 @@ class PepperSpray {
   }
 
   parse() {
-    this.phrase = this.phrase.toLowerCase().split(' ');
+    this.phrase = this.phrase.toLowerCase()
+      .replaceAll('Ä', 'A')
+      .replaceAll('ä', 'a')
+      .replaceAll('Ü', 'U')
+      .replaceAll('ü', 'u')
+      .replaceAll(',', '')
+      .replaceAll('.', '')
+      .split(' ');
   }
 
   translate() {

@@ -49,37 +49,57 @@ class PepperSpray {
 
     // Get result for wide
     let syllable = false;
-    let syllable_letter = null;
-    let syllable_count = 0;
-    let ignore = false;
+    let syllable_letters = [];
     let n = [];
 
     result.web.forEach((_l, i) => {
-      let type_group = this.getType(_l.l);
+      let letter_type_group = this.getType(_l.l);
 
-      if (!syllable) {
+      if (!syllable_letters.length) {
         syllable = true;
-        syllable_letter = _l.l;
-        syllable_count = 1;
+        syllable_letters.push(_l.l);
 
         n.push(_l.v);
       } else {
-        let a = (result.web[i - 2]) ? result.web[i - 2] : false;
-        let b = (a) ? letters_knife[a.l]['waits_for']["_after"][syllable_letter] : false;
-        let c = (a && b) ? b.includes(_l.l) : false;
+        let not_a_syllable_of = (letter) => { !letters_knife[letter]['waits_for'][letter_type_group].includes(_l.l) };
+        let not_a_syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] === undefined };
+        let syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] };
 
-        syllable_count++;
-
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
-          syllable_letter = _l.l;
+        if (syllable_letters.length === 1 && not_a_syllable_of(syllable_letters[0])) {
+          syllable_letters = [_l.l];
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && c) {
+        } else if (syllable_letters.length === 2 && not_a_syllable_after_of(syllable_letters[1])) {
+          syllable_letters = [_l.l];
+
           n.push(_l.v);
+        } else if (syllable_letters.length >= 3 && syllable_after_of(syllable_letters[1])) { //del
+          let a = syllable_letters[0];
+          let b = syllable_letters[1];
+          let c = syllable_letters[2];
+          let d = letters_knife[b]['waits_for']['_after'][c];
+
+          let syllable_word = '';
+          let size = syllable_letters.length;
+          let word = a + b + c;
+          let checksum = false;
+
+          for (let i = 0; i < size; i++) syllable_word += syllable_letters[i];
+
+          for (let i = 0; i < d.length; i++) {
+            if ((word + d[i]).includes(syllable_word)) checksum = true;
+          }
+
+          if (!checksum) {
+            syllable_letters = [_l.l];
+
+            n.push(_l.v);
+          }
+        } else {
+          syllable_letters.push(_l.l);
         }
       }
     });
-
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -117,38 +137,57 @@ class PepperSpray {
 
     // Get result for wide
     let syllable = false;
-    let syllable_letter = null;
-    let syllable_count = 0;
-    let ignore = false;
+    let syllable_letters = [];
     let n = [];
 
     result.web.forEach((_l, i) => {
-      let type_group = this.getType(_l.l);
+      let letter_type_group = this.getType(_l.l);
 
-      if (!syllable) {
+      if (!syllable_letters.length) {
         syllable = true;
-        syllable_letter = _l.l;
-        syllable_count = 1;
+        syllable_letters.push(_l.l);
 
         n.push(_l.v);
       } else {
-        let a = (result.web[i - 2]) ? result.web[i - 2] : false;
-        let b = (a) ? letters_knife[a.l]['waits_for']["_after"][syllable_letter] : false;
-        let c = (a && b) ? b.includes(_l.l) : false;
+        let not_a_syllable_of = (letter) => { !letters_knife[letter]['waits_for'][letter_type_group].includes(_l.l) };
+        let not_a_syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] === undefined };
+        let syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] };
 
-        syllable_count++;
-
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
-          syllable_letter = _l.l;
+        if (syllable_letters.length === 1 && not_a_syllable_of(syllable_letters[0])) {
+          syllable_letters = [_l.l];
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && c) {
+        } else if (syllable_letters.length === 2 && not_a_syllable_after_of(syllable_letters[1])) {
+          syllable_letters = [_l.l];
+
           n.push(_l.v);
+        } else if (syllable_letters.length >= 3 && syllable_after_of(syllable_letters[1])) { //del
+          let a = syllable_letters[0];
+          let b = syllable_letters[1];
+          let c = syllable_letters[2];
+          let d = letters_knife[b]['waits_for']['_after'][c];
+
+          let syllable_word = '';
+          let size = syllable_letters.length;
+          let word = a + b + c;
+          let checksum = false;
+
+          for (let i = 0; i < size; i++) syllable_word += syllable_letters[i];
+
+          for (let i = 0; i < d.length; i++) {
+            if ((word + d[i]).includes(syllable_word)) checksum = true;
+          }
+
+          if (!checksum) {
+            syllable_letters = [_l.l];
+
+            n.push(_l.v);
+          }
+        } else {
+          syllable_letters.push(_l.l);
         }
       }
     });
-
-
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -186,37 +225,57 @@ class PepperSpray {
 
     // Get result for wide
     let syllable = false;
-    let syllable_letter = null;
-    let syllable_count = 0;
-    let ignore = false;
+    let syllable_letters = [];
     let n = [];
 
     result.web.forEach((_l, i) => {
-      let type_group = this.getType(_l.l);
+      let letter_type_group = this.getType(_l.l);
 
-      if (!syllable) {
+      if (!syllable_letters.length) {
         syllable = true;
-        syllable_letter = _l.l;
-        syllable_count = 1;
+        syllable_letters.push(_l.l);
 
         n.push(_l.v);
       } else {
-        let a = (result.web[i - 2]) ? result.web[i - 2] : false;
-        let b = (a) ? letters_knife[a.l]['waits_for']["_after"][syllable_letter] : false;
-        let c = (a && b) ? b.includes(_l.l) : false;
+        let not_a_syllable_of = (letter) => { !letters_knife[letter]['waits_for'][letter_type_group].includes(_l.l) };
+        let not_a_syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] === undefined };
+        let syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] };
 
-        syllable_count++;
-
-        if (!letters_knife[syllable_letter]['waits_for'][type_group].includes(_l.l)) {
-          syllable_letter = _l.l;
+        if (syllable_letters.length === 1 && not_a_syllable_of(syllable_letters[0])) {
+          syllable_letters = [_l.l];
 
           n.push(_l.v);
-        } else if (this.getType(_l.l) === 'consonants' && c) {
+        } else if (syllable_letters.length === 2 && not_a_syllable_after_of(syllable_letters[1])) {
+          syllable_letters = [_l.l];
+
           n.push(_l.v);
+        } else if (syllable_letters.length >= 3 && syllable_after_of(syllable_letters[1])) { //del
+          let a = syllable_letters[0];
+          let b = syllable_letters[1];
+          let c = syllable_letters[2];
+          let d = letters_knife[b]['waits_for']['_after'][c];
+
+          let syllable_word = '';
+          let size = syllable_letters.length;
+          let word = a + b + c;
+          let checksum = false;
+
+          for (let i = 0; i < size; i++) syllable_word += syllable_letters[i];
+
+          for (let i = 0; i < d.length; i++) {
+            if ((word + d[i]).includes(syllable_word)) checksum = true;
+          }
+
+          if (!checksum) {
+            syllable_letters = [_l.l];
+
+            n.push(_l.v);
+          }
+        } else {
+          syllable_letters.push(_l.l);
         }
       }
     });
-
 
     if (n.length >= 2) {
       switch(n[1]) {
@@ -268,15 +327,38 @@ class PepperSpray {
       } else {
         let not_a_syllable_of = (letter) => { !letters_knife[letter]['waits_for'][letter_type_group].includes(_l.l) };
         let not_a_syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] === undefined };
+        let syllable_after_of = (letter) => { return letters_knife[letter]['waits_for']['_after'][_l.l] };
 
         if (syllable_letters.length === 1 && not_a_syllable_of(syllable_letters[0])) {
           syllable_letters = [_l.l];
 
           n.push(_l.v);
-        } else if (syllable_letters.length >= 3 && not_a_syllable_after_of(syllable_letters[1])) {
+        } else if (syllable_letters.length === 2 && not_a_syllable_after_of(syllable_letters[1])) {
           syllable_letters = [_l.l];
 
           n.push(_l.v);
+        } else if (syllable_letters.length >= 3 && syllable_after_of(syllable_letters[1])) { //del
+          let a = syllable_letters[0];
+          let b = syllable_letters[1];
+          let c = syllable_letters[2];
+          let d = letters_knife[b]['waits_for']['_after'][c];
+
+          let syllable_word = '';
+          let size = syllable_letters.length;
+          let word = a + b + c;
+          let checksum = false;
+
+          for (let i = 0; i < size; i++) syllable_word += syllable_letters[i];
+
+          for (let i = 0; i < d.length; i++) {
+            if ((word + d[i]).includes(syllable_word)) checksum = true;
+          }
+
+          if (!checksum) {
+            syllable_letters = [_l.l];
+
+            n.push(_l.v);
+          }
         } else {
           syllable_letters.push(_l.l);
         }

@@ -251,7 +251,7 @@
       "vowels": ["a", "e", "i", "o", "u"],
       "consonants": [],
       "_after": {
-
+        "s": ["ter"]
       }
     }
   },

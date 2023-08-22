@@ -90,6 +90,7 @@
       "vowels": ["a", "o"],
       "consonants": ["d", "g", "l", "m", "n", "p", "r", "s", "t"],
       "_after": {
+        "g": ["h"],
         "r": ["l"],
         "s": ["m"]
       }

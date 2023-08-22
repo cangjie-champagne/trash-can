@@ -292,7 +292,7 @@ class PepperSpray {
           break;
 
         case 'behavior':
-          result.wide = cangjie[''];
+          result.wide = cangjie['dagger-axe'];
           break;
 
         case 'result':

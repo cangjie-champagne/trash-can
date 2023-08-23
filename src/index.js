@@ -302,7 +302,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['shi'],
+      wide: cangjie['corpse'],
       web: []
     };
     

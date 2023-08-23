@@ -188,7 +188,8 @@
       "consonants": ["d", "h", "y"],
       "_after": {
         "a": ["nd", "ft"],
-        "e": ["at"]
+        "e": ["at"],
+        "i": []
       }
     }
   },
@@ -260,6 +261,7 @@
       "vowels": ["a", "e", "i", "o", "u"],
       "consonants": [],
       "_after": {
+        "e": [],
         "s": ["ter"]
       }
     }

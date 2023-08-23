@@ -102,7 +102,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['corpse'],
+      wide: cangjie['disaster'],
       web: []
     };
     
@@ -117,16 +117,20 @@ class PepperSpray {
 
     if (n.length >= 2) {
       switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['predict'];
+          break;
+
         case 'function':
-          result.wide = cangjie['people'];
+          result.wide = cangjie['earth'];
           break;
 
         case 'behavior':
-          result.wide = cangjie['water'];
+          result.wide = cangjie['heart'];
           break;
 
         case 'result':
-          result.wide = cangjie['middle'];
+          result.wide = cangjie['female'];
           break;
       }
     }
@@ -138,7 +142,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['mountain'],
+      wide: cangjie['heart'],
       web: []
     };
     
@@ -153,16 +157,20 @@ class PepperSpray {
 
     if (n.length >= 2) {
       switch(n[1]) {
-        case 'function':
-          result.wide = cangjie['disaster'];
-          break;
-
-        case 'behavior':
+        case 'value':
           result.wide = cangjie['earth'];
           break;
 
+        case 'function':
+          result.wide = cangjie['wood'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['big'];
+          break;
+
         case 'result':
-          result.wide = cangjie['corpse'];
+          result.wide = cangjie['bamboo'];
           break;
       }
     }
@@ -174,7 +182,7 @@ class PepperSpray {
     let _letters = [];
     let result = {
       word,
-      wide: cangjie['bow'],
+      wide: cangjie['twenty'],
       web: []
     };
     
@@ -189,16 +197,20 @@ class PepperSpray {
 
     if (n.length >= 2) {
       switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['mountain'];
+          break;
+
         case 'function':
-          result.wide = cangjie['water'];
+          result.wide = cangjie['fire'];
           break;
 
         case 'behavior':
-          result.wide = cangjie['day'];
+          result.wide = cangjie['corpse'];
           break;
 
         case 'result':
-          result.wide = cangjie['corpse'];
+          result.wide = cangjie['disaster'];
           break;
       }
     }
@@ -207,42 +219,6 @@ class PepperSpray {
   }
 
   d(word, w) {
-    let _letters = [];
-    let result = {
-      word,
-      wide: cangjie['wood'],
-      web: []
-    };
-    
-    w.forEach((l) => {
-      result.web.push({
-        l,
-        v: letters[l]
-      });
-    });
-
-    let n = this.getValues(result);
-
-    if (n.length >= 2) {
-      switch(n[1]) {
-        case 'function':
-          result.wide = cangjie['people'];
-          break;
-
-        case 'behavior':
-          result.wide = cangjie['dagger-axe'];
-          break;
-
-        case 'result':
-          result.wide = cangjie['fire'];
-          break;
-      }
-    }
-
-    this.result.push(result);
-  }
-
-  e(word, w) {
     let _letters = [];
     let result = {
       word,
@@ -261,6 +237,50 @@ class PepperSpray {
 
     if (n.length >= 2) {
       switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['water'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['predict'];
+          break;
+
+        case 'behavior':
+          result.wide = cangjie['corpse'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['disaster'];
+          break;
+      }
+    }
+
+    this.result.push(result);
+  }
+
+  e(word, w) {
+    let _letters = [];
+    let result = {
+      word,
+      wide: cangjie['mountain'],
+      web: []
+    };
+    
+    w.forEach((l) => {
+      result.web.push({
+        l,
+        v: letters[l]
+      });
+    });
+
+    let n = this.getValues(result);
+
+    if (n.length >= 2) {
+      switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['people'];
+          break;
+
         case 'function':
           result.wide = cangjie['mountain'];
           break;
@@ -297,8 +317,20 @@ class PepperSpray {
 
     if (n.length >= 2) {
       switch(n[1]) {
+        case 'value':
+          result.wide = cangjie['water'];
+          break;
+
+        case 'function':
+          result.wide = cangjie['mountain'];
+          break;
+
         case 'behavior':
           result.wide = cangjie['gold'];
+          break;
+
+        case 'result':
+          result.wide = cangjie['wood'];
           break;
       }
     }

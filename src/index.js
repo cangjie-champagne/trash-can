@@ -81,6 +81,12 @@ class PepperSpray {
   parse() {
     this.phrase = this.phrase.toLowerCase()
       .normalize("NFD")
+      .replaceAll(',', '')
+      .replaceAll('.', '')
+      .replaceAll('!', '')
+      .replaceAll('?', '')
+      .replaceAll(`'`, '')
+      .replaceAll(`"`, '')
       .replace(/[\u0300-\u036f]/g, "")
       .split(' ');
   }

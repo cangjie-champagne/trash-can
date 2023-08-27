@@ -87,6 +87,7 @@ class PepperSpray {
       .replaceAll('?', '')
       .replaceAll(`'`, '')
       .replaceAll(`"`, '')
+      .replaceAll(`-`, ' ')
       .replace(/[\u0300-\u036f]/g, "")
       .split(' ');
   }

@@ -1,2 +1,2 @@
-# ⛽ gas-station
-A Bo cangjie keyboard word key translation method from any input possible.
+# 🌻 sunflower
+A Shi cangjie keyboard word key translation method from any input possible.

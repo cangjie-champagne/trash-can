@@ -1,6 +1,6 @@
 const { Command } = require('commander');
 const { name, version } = require('./package.json');
-const { PepperSpray } = require('./src/index');
+const { TrashCan } = require('./src/index');
 const program = new Command();
 
 program
@@ -13,7 +13,7 @@ program.command('parse')
   .argument('<string>', 'string to parse')
   .option('-d, --debug', 'debug')
   .action((s, { debug }) => {
-    const p = new PepperSpray(s, debug);
+    const p = new TrashCan(s, debug);
 
     console.log(p.result);
   });
